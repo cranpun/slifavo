@@ -1,0 +1,16 @@
+.pt-5
+{
+    padding-top: 15px;
+}
+.d-none
+{
+    display: none;
+}
+.d-block
+{
+    display: block;
+}
+canvas
+{
+    vertical-align: top;
+}

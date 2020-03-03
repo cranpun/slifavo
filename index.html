@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja" style="height: 100%;">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>SLIFAVO</title>
+
+    <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.0/css/bulma.min.css" />
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Sawarabi+Mincho" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Sawarabi+Gothic" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+
+    <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript" src="dist/bundle.js"></script>
+    <script type="text/javascript">
+    window.addEventListener("load", function() {
+        ybrndphoto.init("#srcimg", "#canvases");
+    });
+    </script>
+</head>
+
+<body id="body" style="height: 100%;">
+    <div id="height-wrapper" style="min-height: 100%; padding-bottom: 178px; padding-top: 15px;">
+        <header id="header">
+            <div class="container has-text-centered">
+                <h1 class="title is-3 rad bg-pink">
+                    SLIFAVO
+                </h1>
+                <h3>slide pazzle with your favorite image file</h3>
+            </div>
+        </header>
+        <main id="main">
+            <section id="sec-canvas" class="section">
+                <div class="container has-text-centered">
+                    <img crosorigin="anonymous" id="srcimg" src="icon.png" style="width: 100%; display: block;">
+                </div>
+                <div id="canvases" class="container has-text-centered" style="display: none;"></div>
+            </section>
+
+        </main>
+    </div> <!-- #height-wrapper -->
+    <footer id="footer" class="footer" style="margin-top: -178px;">
+        <div class="content has-text-centered">
+            &copy; 2020 cranpun-lab.
+        </div>
+    </footer>
+</body>
+
+</html>
