@@ -68,7 +68,8 @@ export class Playarea {
         // 問題作成：emptyをランダムで移動。移動回数はpanelcountに応じて増加
         let nowemptyindex = (panelcount * panelcount) - 1;
         let premove = nowemptyindex; // 前回と同じパネルは動かさない。初回はありえないnowempty
-        for (let i = 0; i < panelcount * panelcount * panelcount; i++) {
+        let cntshuffle = panelcount * 100;
+        for (let i = 0; i < cntshuffle; i++) {
             // 全てのパネルから移動可能なパネルを抽出
             const movable: number[] = [];
             for (let pc of this.panelcanvases) {
@@ -85,6 +86,8 @@ export class Playarea {
             }
             // 今回移動するパネルを決定
             const moveindex = Math.floor(Math.random() * (movable.length));
+            console.log(movable);
+            console.log(movable[moveindex]);
             this.move(movable[moveindex]);
 
             // 現在の空きパネルが移動したので状態を更新
