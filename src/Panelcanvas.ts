@@ -20,6 +20,8 @@ export class Panelcanvas {
      */
     constructor(panelcount: number, index: number, w: number, h: number) {
         this.canvas = document.createElement("canvas");
+        this.canvas.classList.add("defanime");
+        this.canvas.classList.add("panelcanvas");
         // イベントハンドラでも取得できるようにindexを保存
         this.canvas.dataset.index = index.toString();
         this.ctx = this.canvas.getContext("2d");

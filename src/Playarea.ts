@@ -109,7 +109,17 @@ export class Playarea {
         // ゴール判定
         if (this.isGoal()) {
             (<HTMLElement>document.querySelector(this.cssid_wrappanels)).style.display = "none";
-            (<HTMLElement>document.querySelector(this.cssid_img)).style.display = "inline";
+            const img: HTMLElement = document.querySelector(this.cssid_img);
+            img.style.display = "inline";
+
+            // アニメーション
+            // アニメーション用のクラスを追加
+            img.classList.add("beforemove");
+            // 実行後、少ししてからアニメ発火
+            setTimeout(() => {
+                img.classList.remove("beforemove");
+            }, 100);
+
             this.goalhandler();
         }
     }
@@ -128,7 +138,7 @@ export class Playarea {
         // error
         throw new Error("not found empty panel.");
     }
-    public move(index: number): void {
+    private move(index: number): void {
         // 現在のemptyパネルを取得
         const emptyi = this.findEmptyPanelcanvasArri();
 
@@ -141,6 +151,16 @@ export class Playarea {
         const swap = this.panelcanvases[index].position;
         this.panelcanvases[index].position = this.panelcanvases[emptyi].position;
         this.panelcanvases[emptyi].position = swap;
+
+        // アニメーション用のクラスを追加
+        this.panelcanvases[index].canvas.classList.add("beforemove");
+        // 実行後、少ししてからアニメ発火
+        setTimeout(() => {
+            const cv: HTMLCanvasElement = document.querySelector(".panelcanvas.beforemove");
+            if (cv !== null) {
+                cv.classList.remove("beforemove");
+            }
+        }, 100);
     }
 
     private isGoal(): boolean {
