@@ -10,7 +10,7 @@
 {
     display: block;
 }
-canvas
+canvas.panelcanvas
 {
     vertical-align: top;
 }
